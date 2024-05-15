@@ -181,25 +181,21 @@
     </div>
     
     <script>
-        if (localStorage.getItem('theme') == 'dark') {
-            Mode();
-
-            if (document.getElementById('checkbox').checked) {
-                localStorage.setItem('checkbox', true);
-            }
+        // Check the stored theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('darkmode');
+            document.getElementById('checkbox').checked = true;
         }
 
         function Mode() {
             let night = document.body.classList.toggle('darkmode');
 
             if (night) {
-                Mode.checked = true;
                 localStorage.setItem('theme', 'dark');
-                document.getElementById('checkbox').setAttribute('checked', 'checked');
-            }
-            else {
-                Mode.checked = true;
-                localStorage.removeItem('theme', 'dark');
+                document.getElementById('checkbox').checked = true;
+            } else {
+                localStorage.removeItem('theme');
+                document.getElementById('checkbox').checked = false;
             }
         }
     </script>
