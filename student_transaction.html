@@ -136,20 +136,22 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            if (localStorage.getItem('theme') === 'dark') {
-                document.body.classList.add('darkmode');
-                document.getElementById('checkbox').checked = true;
-            }
-        });
+  <script>
+        // Check the stored theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('darkmode');
+            document.getElementById('checkbox').checked = true;
+        }
 
         function Mode() {
             let night = document.body.classList.toggle('darkmode');
+
             if (night) {
                 localStorage.setItem('theme', 'dark');
+                document.getElementById('checkbox').checked = true;
             } else {
                 localStorage.removeItem('theme');
+                document.getElementById('checkbox').checked = false;
             }
         }
     </script>
