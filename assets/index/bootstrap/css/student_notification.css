@@ -67,12 +67,6 @@ body {
 .modal-body label {
     font-weight: 600;
 }
-:root {
-    --front-hue: #3C4042;
-    --darkmode-hue: #202124;
-    --darkmode-text: #e9e9e8;
-    --darkmode-border: grey;
-}
 
 .darkmode {
     background-color: var(--darkmode-hue);
